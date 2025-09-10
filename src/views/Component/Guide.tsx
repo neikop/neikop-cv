@@ -49,7 +49,7 @@ const Guide = () => {
               textSecondary
             </Text>
             <Text color="primary.main">primary.main</Text>
-            <Text color="black">black</Text>
+            <Text color="fg">Foreground</Text>
             <Text color="primary.dark">primary.dark</Text>
           </SimpleGrid>
         </Stack>
@@ -58,7 +58,7 @@ const Guide = () => {
           <Text fontWeight="semibold">Background</Text>
           <HStack>
             <Center backgroundColor="bg.primary" p={2} w={200}>
-              <Text>bg.primary</Text>
+              <Text color="bg.inverted">bg.primary</Text>
             </Center>
             <Center backgroundColor="bg.muted" p={2} w={200}>
               <Text>bg.muted</Text>

@@ -2,7 +2,7 @@ import { Button, Center, Drawer, Flex, Stack, Text } from "@chakra-ui/react"
 import { JSX, ReactNode, useState } from "react"
 import { MdMenu } from "react-icons/md"
 import { Link, LinkProps, useLocation } from "react-router"
-import { privateRoute } from "routes"
+import { publicRoute } from "routes"
 
 type MenuItemProps = {
   icon?: JSX.Element
@@ -21,7 +21,7 @@ const MenuItem = ({ linkProps, name, path }: MenuItemProps) => {
   return (
     <Link to={path} {...linkProps}>
       <Center
-        _hover={{ backgroundColor: isSelected ? "bg.primary" : "bg.muted" }}
+        _hover={{ backgroundColor: "bg.subtle" }}
         borderTopColor={isSelected ? "primary.main" : "transparent"}
         borderTopWidth={{ base: "none", md: 3 }}
         h="full"
@@ -29,7 +29,7 @@ const MenuItem = ({ linkProps, name, path }: MenuItemProps) => {
         pt={2}
         px={6}
       >
-        <Text as="div" color={isSelected ? "primary.dark" : "black"} fontWeight="bold">
+        <Text as="div" color={isSelected ? "primary.dark" : "fg"} fontWeight="bold">
           {name}
         </Text>
       </Center>
@@ -40,7 +40,8 @@ const MenuItem = ({ linkProps, name, path }: MenuItemProps) => {
 const MenuItems = () => {
   return (
     <>
-      <MenuItem {...privateRoute.swap} />
+      <MenuItem {...publicRoute.home} />
+      <MenuItem {...publicRoute.guide} />
     </>
   )
 }
